@@ -5,20 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Escalize | Seu Próximo Nível de Negócios</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://js.stripe.com/v3/"></script> 
 </head>
 <body>
 
-    <header class="header">
-        <div class="container">
-            <h1>Escalize</h1>
-            <nav>
-                <a href="#direcionador">Direcionador</a>
-                <a href="#planos">Planos Premium</a>
-                <a href="#sobre">Sobre</a>
-                <a href="#" class="btn-login">Login</a>
-            </nav>
-        </div>
-    </header>
+    <header class="header">...</header>
 
     <main>
         <section id="direcionador" class="hero">
@@ -28,17 +19,21 @@
                     <p>Pare de adivinhar. Comece a escalar.</p>
 
                     <div class="direcionador-box">
-                        <h3>Descubra Seu Próximo Passo *Gratuito*</h3>
+                        <h3>Descubra Seus 3 Movimentos de *Alto Impacto* Gratuito</h3>
                         <form id="form-direcionador">
                             <input type="text" id="segmento" placeholder="Qual é o seu segmento de negócio? (Ex: Alimentação, Serviços, Varejo Online)" required>
                             <button type="submit" class="btn-primary">Gerar Ideias de Crescimento</button>
                         </form>
                         <div id="resultado-direcionador" class="resultado-box hidden">
                             <div class="info-card">
-                                <h4>✅ Sua Sugestão Rápida:</h4>
-                                <p id="sugestao-rapida"></p>
+                                <h4>🚀 3 Ideias Fora da Curva para Impactar Seu Mercado:</h4>
+                                <ul id="lista-sugestoes">
+                                    </ul>
                             </div>
-                            <p class="chamada-compra">Quer o plano de ataque completo e atualizações mensais? <a href="#planos" class="link-destaque">Conheça nossos planos!</a></p>
+                            <p class="chamada-compra">
+                                Estas são apenas o começo. Receba estratégias completas e atualizações mensais *sempre à frente da concorrência*.
+                                <a href="#planos" class="link-destaque">Assine agora!</a>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -58,13 +53,8 @@
                         <h3>Startup $29,90</h3>
                         <span class="preco-mes">/mês</span>
                         <p class="descricao">O direcionamento essencial para quem está começando.</p>
-                        <ul>
-                            <li>Sugestões de Marketing Rápido (1x/mês)</li>
-                            <li>Guia de Posicionamento Básico</li>
-                            <li>Acesso ao Arquivo de Dicas (Nível 1)</li>
-                            <li>Comunidade Scalize Básica</li>
-                        </ul>
-                        <a href="#" class="btn-secondary">Assinar Agora</a>
+                        <ul>...</ul>
+                        <button class="btn-secondary btn-comprar" data-plan-id="ID_PLANO_STARTUP">Assinar Agora</button>
                     </div>
 
                     <div class="card combo-popular">
@@ -72,59 +62,22 @@
                         <h3>Impulso $79,90</h3>
                         <span class="preco-mes">/mês</span>
                         <p class="descricao">Acelere seu crescimento com dados e estratégias atualizadas.</p>
-                        <ul>
-                            <li>Sugestões de Marketing e Escala Detalhadas (2x/mês)</li>
-                            <li>Guia de Posicionamento *Avançado*</li>
-                            <li>Acesso Ilimitado ao Arquivo de Dicas</li>
-                            <li>*Webinars Exclusivos* com Especialistas</li>
-                            <li>Comunidade Scalize Premium</li>
-                        </ul>
-                        <a href="#" class="btn-primary">Assinar Agora</a>
+                        <ul>...</ul>
+                        <button class="btn-primary btn-comprar" data-plan-id="ID_PLANO_IMPULSO">Assinar Agora</button>
                     </div>
 
                     <div class="card combo-profissional">
                         <h3>Master $129,90</h3>
                         <span class="preco-mes">/mês</span>
                         <p class="descricao">Estratégias de alto nível, como as dos grandes empreendedores.</p>
-                        <ul>
-                            <li>Sugestões Estratégicas Personalizadas (4x/mês)</li>
-                            <li>*Análise de Mercado a Fundo (Trimestral)*</li>
-                            <li>Mentoria em Grupo (Mensal)</li>
-                            <li>Todos os recursos do plano Impulso</li>
-                        </ul>
-                        <a href="#" class="btn-secondary">Assinar Agora</a>
+                        <ul>...</ul>
+                        <button class="btn-secondary btn-comprar" data-plan-id="ID_PLANO_MASTER">Assinar Agora</button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="sobre" class="diferencial">
-            <div class="container">
-                <h2>Nosso Diferencial: *Inteligência Comprovada*</h2>
-                <div class="diferencial-item">
-                    <div class="icon">🔍</div>
-                    <h3>Curadoria de IA</h3>
-                    <p>Nosso conteúdo é continuamente alimentado por uma IA que analisa o sucesso dos maiores empresários globais, garantindo estratégias atuais e comprovadas.</p>
-                </div>
-                <div class="diferencial-item">
-                    <div class="icon">🔒</div>
-                    <h3>Segurança na Informação</h3>
-                    <p>Focamos em transparência e dados concretos, dando a você a segurança de que está investindo em conhecimento de alta performance.</p>
-                </div>
-                <div class="diferencial-item">
-                    <div class="icon">🚀</div>
-                    <h3>Foco em Escalabilidade</h3>
-                    <p>Cada dica e plano é desenhado para levar seu MEI ou pequena empresa ao próximo patamar de crescimento sustentável.</p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Escalize. Todos os direitos reservados. | Privacidade | Termos de Serviço</p>
-        </div>
-    </footer>
+        </main>
 
     <script src="script.js"></script>
 </body>
