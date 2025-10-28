@@ -1,120 +1,156 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Direciona Business</title>
-<style>
-body {font-family:'Poppins',sans-serif; margin:0; background:#f8fafc; color:#1e293b;}
-header, main, footer {max-width:960px; margin:auto; padding:20px;}
-header{text-align:center; margin-top:50px;}
-h1{color:#0B2545;}
-p{color:#475569;}
-input, select{padding:12px; font-size:1rem; border-radius:8px; border:1px solid #cbd5e1; width:100%; margin-bottom:10px;}
-button{background:#2563eb; color:#fff; border:none; padding:12px 20px; border-radius:8px; cursor:pointer; margin-top:5px;}
-button:hover{background:#1e40af;}
-.sugg{background:#fff; border-radius:10px; padding:15px; margin-bottom:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05);}
-.modal{display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); justify-content:center; align-items:center;}
-.modal-content{background:#fff; padding:30px; border-radius:12px; max-width:500px; width:90%; text-align:center;}
-.close{float:right; font-size:1.5rem; cursor:pointer;}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escalize - Ideias que impulsionam negócios</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(180deg, #ffffff 0%, #f0f4ff 100%);
+      color: #1f2a44;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    header {
+      position: absolute;
+      top: 30px;
+      left: 40px;
+      font-size: 1.6em;
+      font-weight: 700;
+      color: #004aad;
+      letter-spacing: 1px;
+    }
+
+    h1 {
+      font-size: 2.2em;
+      margin-bottom: 0.5em;
+      color: #1f2a44;
+    }
+
+    p {
+      font-size: 1.1em;
+      max-width: 520px;
+      margin: 0 auto 1.5em;
+      color: #444;
+    }
+
+    button {
+      background: #004aad;
+      color: white;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #003d8f;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 20px;
+      font-size: 0.9em;
+      color: #777;
+    }
+
+    /* Formulário oculto */
+    #form-container {
+      display: none;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      max-width: 400px;
+      margin-top: 20px;
+      text-align: left;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1em;
+    }
+
+    #close-form {
+      background: #ccc;
+      color: #333;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      float: right;
+    }
+
+    #close-form:hover {
+      background: #b3b3b3;
+    }
+  </style>
 </head>
 <body>
 
-<header>
-<h1 id="headline"></h1>
-<p id="subheadline"></p>
-<button id="ctaButton">Gerar ideias</button>
-</header>
+  <header>Escalize</header>
 
-<main>
-<form id="segmentForm" style="display:none;">
-<input type="text" id="nome" placeholder="Seu nome (opcional)">
-<input type="email" id="email" placeholder="Seu e-mail" required>
-<input type="text" id="segmento" placeholder="Segmento (ex: moda, padaria, marketing digital)" required>
-<select id="modelo">
-<option value="online">Online</option>
-<option value="fisico">Loja física</option>
-<option value="servico">Serviços</option>
-<option value="remoto">Remoto / Digital</option>
-</select>
-<button type="submit">Gerar minhas ideias</button>
-</form>
+  <main>
+    <h1>Descubra ideias que fazem seu negócio crescer</h1>
+    <p>Preencha seu segmento e receba sugestões inteligentes e comprovadas para impulsionar sua empresa.</p>
+    <button id="open-form">Gerar Ideias</button>
 
-<div id="result"></div>
-</main>
+    <div id="form-container">
+      <button id="close-form">Fechar</button>
+      <h2>Preencha para receber ideias</h2>
+      <form>
+        <label>Nome da empresa:</label>
+        <input type="text" placeholder="Ex: Bella Modas" required>
 
-<div id="modalPlanos" class="modal">
-<div class="modal-content">
-<span class="close" id="closeModal">&times;</span>
-<h2>Planos Mensais</h2>
-<p>Receba dicas exclusivas e atualizações do seu segmento.</p>
-<button onclick="alert('Integração pagamento aqui')">Starter - R$49/mês</button>
-<button onclick="alert('Integração pagamento aqui')">Growth - R$99/mês</button>
-<button onclick="alert('Integração pagamento aqui')">Pro - R$149/mês</button>
-</div>
-</div>
+        <label>Segmento de atuação:</label>
+        <select required>
+          <option value="">Selecione...</option>
+          <option>Roupas e calçados</option>
+          <option>Beleza e estética</option>
+          <option>Alimentação</option>
+          <option>Tecnologia</option>
+          <option>Serviços</option>
+          <option>Outro</option>
+        </select>
 
-<footer>© 2025 Direciona Business</footer>
+        <label>Qual seu principal desafio atual?</label>
+        <textarea rows="3" placeholder="Ex: Aumentar as vendas online..." required></textarea>
 
-<script>
-// --- Teste A/B ---
-const versions={A:{headline:"Descubra as ideias certas para o seu negócio — em 60 segundos.",subheadline:"Preencha seu segmento e receba ideias de marketing, posicionamento e crescimento."},B:{headline:"Não sabe por onde começar? Nós te mostramos o caminho.",subheadline:"Acesse estratégias práticas, testadas por grandes empresários."}};
-const chosen=Math.random()<0.5?"A":"B";
-const content=versions[chosen];
-document.getElementById("headline").textContent=content.headline;
-document.getElementById("subheadline").textContent=content.subheadline;
+        <button type="submit">Enviar e gerar ideias</button>
+      </form>
+    </div>
+  </main>
 
-// --- CTA ---
-const cta=document.getElementById("ctaButton");
-const form=document.getElementById("segmentForm");
-cta.addEventListener("click",()=>{cta.style.display="none"; form.style.display="flex";});
+  <footer>© 2025 Escalize. Todos os direitos reservados.</footer>
 
-// --- Templates ---
-const TEMPLATES={
-padaria:[{title:"Marketing local",body:"Ofereça cupons de 1ª compra e promova entregas via WhatsApp."},{title:"Posicionamento",body:"Destaque 'pães artesanais frescos às 6h' nas redes sociais."},{title:"Escala",body:"Venda kits semanais por assinatura."}],
-moda:[{title:"Marketing por coleção",body:"Lance mini-coleções trimestrais com campanhas digitais."},{title:"Posicionamento",body:"Escolha um nicho específico e use provas sociais."},{title:"Escala",body:"Parcerias com influenciadores e kits de revenda."}],
-padrao:[{title:"Marketing rápido",body:"Use catálogo no WhatsApp e anúncios direcionados."},{title:"Posicionamento claro",body:"Descreva benefícios tangíveis ao cliente."},{title:"Escala inicial",body:"Crie um produto mínimo viável e repita semanalmente."}]
-};
+  <script>
+    const openForm = document.getElementById("open-form");
+    const closeForm = document.getElementById("close-form");
+    const formContainer = document.getElementById("form-container");
 
-form.addEventListener("submit",function(e){
-e.preventDefault();
-const nome=document.getElementById("nome").value.trim();
-const email=document.getElementById("email").value.trim();
-const segmento=document.getElementById("segmento").value.trim().toLowerCase();
-const modelo=document.getElementById("modelo").value;
-if(!email||!segmento){alert("Preencha e-mail e segmento.");return;}
-let chave='padrao';
-if(segmento.includes('padaria')||segmento.includes('pão')) chave='padaria';
-else if(segmento.includes('moda')) chave='moda';
-const arr=TEMPLATES[chave]||TEMPLATES['padrao'];
-const result=document.getElementById("result");
-result.innerHTML=<div style="margin-bottom:15px;">Olá ${nome||'empreendedor'}, aqui estão suas 3 ideias para <strong>${segmento}</strong>:</div>;
-arr.forEach(s=>{
-const el=document.createElement("div");
-el.className="sugg";
-el.innerHTML=<strong>${s.title}</strong>: ${s.body};
-result.appendChild(el);
-});
-localStorage.setItem("ab_version",chosen);
+    openForm.addEventListener("click", () => {
+      formContainer.style.display = "block";
+      openForm.style.display = "none";
+    });
 
-// --- Envio de e-mail via backend ---
-fetch('/api/send',{
-method:'POST',
-headers:{'Content-Type':'application/json'},
-body:JSON.stringify({nome,email,segmento,modelo,ab_version:localStorage.getItem("ab_version")})
-})
-.then(res=>res.json())
-.then(data=>{alert("Suas ideias foram enviadas por e-mail!"); document.getElementById("modalPlanos").style.display="flex";})
-.catch(err=>alert("Erro ao enviar e-mail. Tente novamente."));
-});
-
-// --- Modal ---
-const modal=document.getElementById("modalPlanos");
-const closeModal=document.getElementById("closeModal");
-closeModal.onclick=()=>{modal.style.display="none";}
-window.onclick=(e)=>{if(e.target==modal) modal.style.display="none";}
-</script>
-
+    closeForm.addEventListener("click", () => {
+      formContainer.style.display = "none";
+      openForm.style.display = "inline-block";
+    });
+  </script>
 </body>
 </html>
