@@ -1,0 +1,411 @@
+/* Definição das Cores e Fontes */
+:root {
+    --cor-principal: #003366; /* Azul Marinho (Segurança/Posicionamento) */
+    --cor-secundaria: #33CCFF; /* Azul Claro (Transparência/Inovação) */
+    --cor-destaque: #FF9900; /* Laranja (Ação/Atenção) */
+    --cor-fundo: #F8F8F8;
+    --cor-texto: #333333;
+    --cor-branco: #FFFFFF;
+
+    --font-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-principal);
+    line-height: 1.6;
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* --- Componentes de Botão --- */
+.btn-primary, .btn-secondary, .btn-login {
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--cor-destaque);
+    color: var(--cor-principal);
+}
+
+.btn-primary:hover {
+    background-color: #E08700;
+}
+
+.btn-secondary {
+    background-color: var(--cor-principal);
+    color: var(--cor-branco);
+    border: 2px solid var(--cor-principal);
+}
+
+.btn-secondary:hover {
+    background-color: var(--cor-branco);
+    color: var(--cor-principal);
+}
+
+.btn-login {
+    background-color: transparent;
+    color: var(--cor-branco);
+    border: 2px solid var(--cor-branco);
+    padding: 8px 20px;
+    margin-left: 20px;
+}
+
+.btn-login:hover {
+    background-color: var(--cor-secundaria);
+    border-color: var(--cor-secundaria);
+}
+
+/* --- Header e Navegação --- */
+.header {
+    background-color: var(--cor-principal);
+    color: var(--cor-branco);
+    padding: 15px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h1 {
+    font-size: 1.8em;
+    color: var(--cor-secundaria);
+}
+
+.header nav a {
+    color: var(--cor-branco);
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 500;
+}
+
+.header nav a:hover {
+    color: var(--cor-secundaria);
+}
+
+/* --- Seção Hero e Direcionador --- */
+.hero {
+    background: linear-gradient(135deg, var(--cor-principal) 0%, #004D99 100%);
+    color: var(--cor-branco);
+    padding: 80px 0;
+}
+
+.hero .container {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.hero-content {
+    flex: 2;
+}
+
+.hero-content h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.hero-content h2 strong {
+    color: var(--cor-destaque);
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: #CCCCFF;
+}
+
+.hero-image-placeholder {
+    flex: 1;
+    min-height: 250px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-style: italic;
+    text-align: center;
+    padding: 15px;
+}
+
+/* Estilo do Direcionador */
+.direcionador-box {
+    background-color: var(--cor-branco);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    color: var(--cor-texto);
+}
+
+.direcionador-box h3 {
+    color: var(--cor-principal);
+    margin-bottom: 15px;
+    font-size: 1.4em;
+}
+
+.direcionador-box input {
+    width: 70%;
+    padding: 12px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.direcionador-box button {
+    width: 25%;
+    padding: 12px;
+}
+
+.resultado-box {
+    margin-top: 20px;
+    border-left: 5px solid var(--cor-secundaria);
+    padding-left: 20px;
+}
+
+.resultado-box.hidden {
+    display: none;
+}
+
+.info-card {
+    background-color: #e6f7ff; /* Fundo levemente azul para transparência */
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.info-card h4 {
+    color: var(--cor-principal);
+    margin-bottom: 5px;
+}
+
+.chamada-compra {
+    font-style: italic;
+    margin-top: 10px;
+}
+
+.link-destaque {
+    color: var(--cor-destaque);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* --- Seção Planos --- */
+.planos {
+    padding: 60px 0;
+    text-align: center;
+    background-color: var(--cor-branco);
+}
+
+.planos h2 {
+    font-size: 2em;
+    color: var(--cor-principal);
+    margin-bottom: 10px;
+}
+
+.planos .subtitle {
+    margin-bottom: 40px;
+    color: #666;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.card {
+    background-color: var(--cor-fundo);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 5px solid var(--cor-principal);
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    font-size: 1.8em;
+    color: var(--cor-principal);
+    margin-bottom: 5px;
+}
+
+.card .preco-mes {
+    display: block;
+    color: #888;
+    margin-bottom: 15px;
+}
+
+.card .descricao {
+    margin-bottom: 20px;
+    font-style: italic;
+    min-height: 40px;
+}
+
+.card ul {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.card ul li {
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.card ul li:before {
+    content: "✅";
+    position: absolute;
+    left: 0;
+    color: var(--cor-secundaria);
+}
+
+.card .btn-primary, .card .btn-secondary {
+    display: block;
+    width: 100%;
+}
+
+/* Estilo do Combo Mais Popular */
+.combo-popular {
+    border-top-color: var(--cor-destaque);
+    background-color: var(--cor-branco);
+    padding-bottom: 50px; /* Mais espaço para a tag */
+}
+
+.tag-popular {
+    position: absolute;
+    top: -15px;
+    right: 20px;
+    background-color: var(--cor-destaque);
+    color: var(--cor-principal);
+    font-weight: bold;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Seção Diferencial --- */
+.diferencial {
+    padding: 60px 0;
+    background-color: var(--cor-fundo);
+    text-align: center;
+}
+
+.diferencial h2 {
+    font-size: 2em;
+    color: var(--cor-principal);
+    margin-bottom: 40px;
+}
+
+.diferencial .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.diferencial-item {
+    padding: 20px;
+    background-color: var(--cor-branco);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.diferencial-item .icon {
+    font-size: 3em;
+    margin-bottom: 10px;
+    color: var(--cor-destaque);
+}
+
+.diferencial-item h3 {
+    color: var(--cor-principal);
+    margin-bottom: 10px;
+}
+
+/* --- Footer --- */
+.footer {
+    background-color: var(--cor-principal);
+    color: var(--cor-secundaria);
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.footer a {
+    color: var(--cor-secundaria);
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* --- Responsividade (Para dispositivos móveis) --- */
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header nav {
+        margin-top: 15px;
+    }
+
+    .header nav a, .btn-login {
+        margin: 0 10px 10px 10px;
+        display: inline-block;
+    }
+
+    .hero .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-image-placeholder {
+        display: none; /* Oculta a imagem no mobile para foco no conteúdo */
+    }
+
+    .direcionador-box input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .direcionador-box button {
+        width: 100%;
+    }
+
+    .cards-grid, .diferencial .container {
+        grid-template-columns: 1fr;
+    }
+}

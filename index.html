@@ -1,156 +1,131 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Escalize - Ideias que impulsionam negócios</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: "Poppins", sans-serif;
-      background: linear-gradient(180deg, #ffffff 0%, #f0f4ff 100%);
-      color: #1f2a44;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      text-align: center;
-    }
-
-    header {
-      position: absolute;
-      top: 30px;
-      left: 40px;
-      font-size: 1.6em;
-      font-weight: 700;
-      color: #004aad;
-      letter-spacing: 1px;
-    }
-
-    h1 {
-      font-size: 2.2em;
-      margin-bottom: 0.5em;
-      color: #1f2a44;
-    }
-
-    p {
-      font-size: 1.1em;
-      max-width: 520px;
-      margin: 0 auto 1.5em;
-      color: #444;
-    }
-
-    button {
-      background: #004aad;
-      color: white;
-      border: none;
-      padding: 14px 28px;
-      border-radius: 8px;
-      font-size: 1em;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    button:hover {
-      background: #003d8f;
-    }
-
-    footer {
-      position: absolute;
-      bottom: 20px;
-      font-size: 0.9em;
-      color: #777;
-    }
-
-    /* Formulário oculto */
-    #form-container {
-      display: none;
-      background: white;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      width: 90%;
-      max-width: 400px;
-      margin-top: 20px;
-      text-align: left;
-    }
-
-    input, select, textarea {
-      width: 100%;
-      margin-bottom: 15px;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 1em;
-    }
-
-    #close-form {
-      background: #ccc;
-      color: #333;
-      border: none;
-      padding: 8px 16px;
-      border-radius: 6px;
-      cursor: pointer;
-      float: right;
-    }
-
-    #close-form:hover {
-      background: #b3b3b3;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escalize | Seu Próximo Nível de Negócios</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header>Escalize</header>
+    <header class="header">
+        <div class="container">
+            <h1>Escalize</h1>
+            <nav>
+                <a href="#direcionador">Direcionador</a>
+                <a href="#planos">Planos Premium</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#" class="btn-login">Login</a>
+            </nav>
+        </div>
+    </header>
 
-  <main>
-    <h1>Descubra ideias que fazem seu negócio crescer</h1>
-    <p>Preencha seu segmento e receba sugestões inteligentes e comprovadas para impulsionar sua empresa.</p>
-    <button id="open-form">Gerar Ideias</button>
+    <main>
+        <section id="direcionador" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2>Seu Negócio Pequeno. Seu Crescimento *Gigante*.</h2>
+                    <p>Pare de adivinhar. Comece a escalar.</p>
 
-    <div id="form-container">
-      <button id="close-form">Fechar</button>
-      <h2>Preencha para receber ideias</h2>
-      <form>
-        <label>Nome da empresa:</label>
-        <input type="text" placeholder="Ex: Bella Modas" required>
+                    <div class="direcionador-box">
+                        <h3>Descubra Seu Próximo Passo *Gratuito*</h3>
+                        <form id="form-direcionador">
+                            <input type="text" id="segmento" placeholder="Qual é o seu segmento de negócio? (Ex: Alimentação, Serviços, Varejo Online)" required>
+                            <button type="submit" class="btn-primary">Gerar Ideias de Crescimento</button>
+                        </form>
+                        <div id="resultado-direcionador" class="resultado-box hidden">
+                            <div class="info-card">
+                                <h4>✅ Sua Sugestão Rápida:</h4>
+                                <p id="sugestao-rapida"></p>
+                            </div>
+                            <p class="chamada-compra">Quer o plano de ataque completo e atualizações mensais? <a href="#planos" class="link-destaque">Conheça nossos planos!</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image-placeholder">
+                    [Imagem: Profissionais em reunião com gráfico de crescimento, tons de azul e laranja]
+                </div>
+            </div>
+        </section>
 
-        <label>Segmento de atuação:</label>
-        <select required>
-          <option value="">Selecione...</option>
-          <option>Roupas e calçados</option>
-          <option>Beleza e estética</option>
-          <option>Alimentação</option>
-          <option>Tecnologia</option>
-          <option>Serviços</option>
-          <option>Outro</option>
-        </select>
+        <section id="planos" class="planos">
+            <div class="container">
+                <h2>Planos *Premium* para Escalizar Seu Negócio</h2>
+                <p class="subtitle">Informação profissional e comprovada, atualizada mensalmente por IA.</p>
+                
+                <div class="cards-grid">
+                    <div class="card combo-inicial">
+                        <h3>Startup $29,90</h3>
+                        <span class="preco-mes">/mês</span>
+                        <p class="descricao">O direcionamento essencial para quem está começando.</p>
+                        <ul>
+                            <li>Sugestões de Marketing Rápido (1x/mês)</li>
+                            <li>Guia de Posicionamento Básico</li>
+                            <li>Acesso ao Arquivo de Dicas (Nível 1)</li>
+                            <li>Comunidade Scalize Básica</li>
+                        </ul>
+                        <a href="#" class="btn-secondary">Assinar Agora</a>
+                    </div>
 
-        <label>Qual seu principal desafio atual?</label>
-        <textarea rows="3" placeholder="Ex: Aumentar as vendas online..." required></textarea>
+                    <div class="card combo-popular">
+                        <div class="tag-popular">MAIS POPULAR</div>
+                        <h3>Impulso $79,90</h3>
+                        <span class="preco-mes">/mês</span>
+                        <p class="descricao">Acelere seu crescimento com dados e estratégias atualizadas.</p>
+                        <ul>
+                            <li>Sugestões de Marketing e Escala Detalhadas (2x/mês)</li>
+                            <li>Guia de Posicionamento *Avançado*</li>
+                            <li>Acesso Ilimitado ao Arquivo de Dicas</li>
+                            <li>*Webinars Exclusivos* com Especialistas</li>
+                            <li>Comunidade Scalize Premium</li>
+                        </ul>
+                        <a href="#" class="btn-primary">Assinar Agora</a>
+                    </div>
 
-        <button type="submit">Enviar e gerar ideias</button>
-      </form>
-    </div>
-  </main>
+                    <div class="card combo-profissional">
+                        <h3>Master $129,90</h3>
+                        <span class="preco-mes">/mês</span>
+                        <p class="descricao">Estratégias de alto nível, como as dos grandes empreendedores.</p>
+                        <ul>
+                            <li>Sugestões Estratégicas Personalizadas (4x/mês)</li>
+                            <li>*Análise de Mercado a Fundo (Trimestral)*</li>
+                            <li>Mentoria em Grupo (Mensal)</li>
+                            <li>Todos os recursos do plano Impulso</li>
+                        </ul>
+                        <a href="#" class="btn-secondary">Assinar Agora</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <footer>© 2025 Escalize. Todos os direitos reservados.</footer>
+        <section id="sobre" class="diferencial">
+            <div class="container">
+                <h2>Nosso Diferencial: *Inteligência Comprovada*</h2>
+                <div class="diferencial-item">
+                    <div class="icon">🔍</div>
+                    <h3>Curadoria de IA</h3>
+                    <p>Nosso conteúdo é continuamente alimentado por uma IA que analisa o sucesso dos maiores empresários globais, garantindo estratégias atuais e comprovadas.</p>
+                </div>
+                <div class="diferencial-item">
+                    <div class="icon">🔒</div>
+                    <h3>Segurança na Informação</h3>
+                    <p>Focamos em transparência e dados concretos, dando a você a segurança de que está investindo em conhecimento de alta performance.</p>
+                </div>
+                <div class="diferencial-item">
+                    <div class="icon">🚀</div>
+                    <h3>Foco em Escalabilidade</h3>
+                    <p>Cada dica e plano é desenhado para levar seu MEI ou pequena empresa ao próximo patamar de crescimento sustentável.</p>
+                </div>
+            </div>
+        </section>
+    </main>
 
-  <script>
-    const openForm = document.getElementById("open-form");
-    const closeForm = document.getElementById("close-form");
-    const formContainer = document.getElementById("form-container");
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Escalize. Todos os direitos reservados. | Privacidade | Termos de Serviço</p>
+        </div>
+    </footer>
 
-    openForm.addEventListener("click", () => {
-      formContainer.style.display = "block";
-      openForm.style.display = "none";
-    });
-
-    closeForm.addEventListener("click", () => {
-      formContainer.style.display = "none";
-      openForm.style.display = "inline-block";
-    });
-  </script>
+    <script src="script.js"></script>
 </body>
 </html>
